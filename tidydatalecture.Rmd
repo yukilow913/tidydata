@@ -1,0 +1,17 @@
+```{r}
+library(tidyverse)
+library(haven)
+library(readxl)
+library(janitor)
+
+options(tibble.print_min = 5)
+```
+
+```{r}
+pulse_df = 
+  haven::read_sas("./public_pulse_data.sas7bdat") %>%
+  janitor::clean_names()
+
+pulse_df
+
+```
